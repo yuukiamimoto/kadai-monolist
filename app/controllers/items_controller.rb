@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
     @items = []
 
     @keyword = params[:keyword]
-    if @keyword.present? # 
+    if @keyword
       results = RakutenWebService::Ichiba::Item.search({
         keyword: @keyword,
         imageFlag: 1,
@@ -13,9 +13,14 @@ class ItemsController < ApplicationController
       })
 
       results.each do |result|
-        item = Item.new(read(result))
+        item = Item.find_or_initialize_by(read(result))
         @items << item
       end
+    end
+    
+    def show
+      @item = Item.find(params[:id])
+      @want_users = @item.want_users
     end
   end
 
