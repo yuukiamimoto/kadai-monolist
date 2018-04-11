@@ -51,7 +51,7 @@ footer {
 
 /* item */
 .item .panel-body {
-  height: 70px;
+  height: 120px;
 }
 .item .panel-heading {
   height: 250px;
@@ -68,18 +68,18 @@ p.item-title {
   overflow: hidden;
 }
 
-.item .panel-body {
-  height: 120px;
-}
 
-.item .button form {
+
+.item .buttons form {
   display: inline-block;
   margin: 0 5px;
 }
 
+
 .user-profile .name {
   margin-bottom: 20px;
 }
+
 .user-profile .name h1 {
   text-shadow: 1px 1px 1px #fff;
   font-weight: bold;
