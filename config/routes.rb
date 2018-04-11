@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :users, only: [:show, :new, :create]
+  
+  get 'rankings/want', to: 'rankings#want'
 
   resources :items, only: [:show, :new]
   resources :ownerships, only: [:create, :destroy]
